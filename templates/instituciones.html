@@ -1,0 +1,153 @@
+
+<md-content flex layout-padding style="background-color: white;">
+    
+        <form name="projectForm" ng-submit="ctrl.insert({'nombre':user.institucion,'domicilio':user.direccion,'pais':'Argentina','provincia':user.provincia,'localidad':user.localidad,'email':user.email,'web':user.web,'facebook':user.facebook,'telefono':user.telefono,'nombre_contacto':user.contacto,'que_hace':user.hacemos,'voluntarios':user.cuantos,'beneficiados1':user.cb0_5,'beneficiados2':user.cb6_12,'beneficiados3':user.adultos,'beneficiados4':user.ancianos,'personas_beneficiadas':user.beneficiadas,'translado_donaciones':user.donaciones,'area_1':user.proyecto,'comentario_1':user.necesitan},'instituciones')">
+            <div layout="row" layout-xs="column" layout-align="center center">
+                <div style="padding:5px;" flex="45" flex-xs="100">
+                    <fieldset class="standard" >
+                    <legend>DATOS DE LA INSTITUCI&Oacute;N.</legend>
+                        <md-input-container>
+                            <label>Instituci&oacute;n</label>
+                            <input required ng-model="user.institucion" name="direccion">
+                            <div ng-messages="projectForm.institucion.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Direcci&oacute;n</label>
+                            <input required ng-model="user.direccion" name="direccion">
+                            <div ng-messages="projectForm.direccion.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Provincia</label>
+                            <input required ng-model="user.provincia" name="provincia">
+                            <div ng-messages="projectForm.provincia.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Localidad</label>
+                            <input required ng-model="user.localidad" name="localidad">
+                            <div ng-messages="projectForm.localidad.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Email</label>
+                            <input required type="email" name="email" ng-model="user.email"
+                                   minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                                <div ng-messages="projectForm.email.$error" role="alert">
+                                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+                                    </div>
+                                </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>P&aacute;gina Web</label>
+                            <input required name="web" ng-model="user.web">
+                            <div ng-messages="projectForm.web.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Facebook</label>
+                            <input required name="facebook" ng-model="user.facebook">
+                            <div ng-messages="projectForm.facebook.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Contacto</label>
+                            <input required name="contacto" ng-model="user.contacto">
+                            <div ng-messages="projectForm.contacto.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                            <label>Tel&eacute;fono</label>
+                            <input required name="telefono" ng-model="user.telefono">
+                            <div ng-messages="projectForm.telefono.$error">
+                              <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                    </fieldset>
+                </div>
+                <div style="padding:5px;" flex="45" flex-xs="100">
+                    <fieldset class="standard" >
+                        <legend>LA INSTITUCI&Oacute;N</legend>
+                            <md-input-container class="md-block">
+                                <label>Que hacemos...</label>
+                                <textarea ng-model="user.hacemos" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>&iquest;Cu&aacute;ntos voluntarios podr&iacute;an trabajar simultaneamente dentro de la misma?</label>
+                                <input type="number" required name="cuantos" ng-model="user.cuantos">
+                                <div ng-messages="projectForm.cuantos.$error">
+                                  <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <p>&iquest;Qui&eacute;nes son los beneficiarios/destinatarios?:</p>
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink" class="md-primary" ng-model="user.cb0_5">
+                                Ni&ntilde;os 0 a 5
+                                </md-checkbox>
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink" class="md-primary" ng-model="user.cb6_12">
+                                Ni&ntilde;os 6 a 12
+                                </md-checkbox>
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink" class="md-primary" ng-model="user.jovenes">
+                                J&oacute;venes
+                                </md-checkbox>
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink" class="md-primary" ng-model="user.adultos">
+                                Adultos
+                                </md-checkbox>
+                                <md-checkbox md-no-ink aria-label="Checkbox No Ink" class="md-primary" ng-model="user.ancianos">
+                                Ancianos
+                                </md-checkbox>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>&iquest;Cantidad de personas beneficiadas?</label>
+                                <input type="number" required name="beneficiadas" ng-model="user.beneficiadas">
+                                <div ng-messages="projectForm.beneficiadas.$error">
+                                  <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                            <p>&iquest;Cuentan la con la posibilidad de trasladar donaciones?:</p>
+                            <md-radio-group ng-model="user.donaciones">
+                              <md-radio-button value="si_traslado_donaciones" class="md-primary"> Si </md-radio-button>
+                              <md-radio-button value="no_traslado_donaciones"> No </md-radio-button>
+                            </md-radio-group>
+                            <md-divider></md-divider>
+                    <h3>POR FAVOR ESPECIFIQUE AL MENOS 1 NECESIDAD CONCRETA</h3>
+                    <h4>TIPO DE PROYECTO<br/>
+                    Seleccione de la lista desplegable un "&aacute;rea". 
+                    Describa la necesidad en la columna "&iquest;Qu&eacute; necesitan?"</h4> 
+                    
+                    <div layout="column" layout-align="start start">
+                        <span>Opci&oacute;n de proyecto</span>
+                            <md-select ng-model="user.proyecto" placeholder="&Aacute;rea" class="md-no-underline">
+                              <md-option value="salud">Salud</md-option>
+                              <md-option value="educacion">Educacion</md-option>
+                              <md-option value="deporte">Deporte</md-option>
+                              <md-option value="arte">Arte</md-option>
+                              <md-option value="recreacion">Recreaci&oacute;n</md-option>
+                              <md-option value="nutricion">Nutrici&oacute;n</md-option>
+                              <md-option value="abrigo">Vestimenta - Abrigo</md-option>
+                              <md-option value="estructura">Estructura - Acondicionamiento</md-option>
+                              <md-option value="otra">Otra</md-option>
+                            </md-select>
+                    </div>
+                        <md-input-container class="md-block">
+                            <label>&iquest;Qu&eacute; necesitan?</label>
+                            <textarea ng-model="user.necesitan" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                    <div>
+                        <md-button type="submit" style="background-color:#f76293;color:white; ">Enviar</md-button>
+                    </div>
+                    </fieldset>
+                </div>
+                
+            </div>
+        </form>        
+</md-content>

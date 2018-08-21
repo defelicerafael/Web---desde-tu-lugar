@@ -1,0 +1,9 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+/* Database 'wi582675_dtl' */ 
+/* wi582675_dtl.sliders */
+
+[{"id": 1,"img": "img/home/sliders/slider1.png","alt": "Y tu lugar cual es","link": "#/ayudar","texto": ""}, {"id": 2,"img": "img/home/sliders/slider2.png","alt": "Dona online","link": "#/ayudar","texto": ""}]

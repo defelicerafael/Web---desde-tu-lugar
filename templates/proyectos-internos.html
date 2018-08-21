@@ -1,0 +1,66 @@
+<md-content flex layout-padding style="background-color: white;">
+    <div>
+        <img src="img/empresas/internos/desdetulugar-proyectos-internos-responsabilidad-social-empresarial.png" atl="desdetulugar empresas proyectos internos responsabilidad social empresarial" title="desdetulugar empresas proyectos internos responsabilidad social empresarial" style="width: 100%; height: auto;"/>
+    </div>
+    <div layout="column" layout-align="center center" style="color:white; background-color: #bc78cd; width: 100%; height: auto;">
+        <div style="text-align: center;">
+            <span style="font-size: 1.5em;">RESPONSABILIDAD SOCIAL</span><br/>
+            <span style="font-size: 2.5em;">SIN SALIR DE LA EMPRESA</span>
+        </div>
+    </div>
+    <div layout="row" layout-xs="column" layout-align="center center">
+        <div style="background-color: white; width: 100%; padding:4%;" layout="row" layout-align="center center">
+            <img src="img/empresas/internos/desdetulugar-proyectos-internos-rse.png" atl="desdetulugar empresas proyectos internos responsabilidad social empresarial" title="desdetulugar empresas proyectos internos responsabilidad social empresarial" style="width: 100%; height: auto;"/>
+        </div>
+        <div style="background-color: white; width: 100%; padding:4%;" layout="row" layout-align="center center">
+            <iframe width="560" height="315" ng-src="https://www.youtube.com/embed/NaysZuqFy1Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>    
+    <div style="color:#606060;">
+        <h4 class="md-title">
+            DTL colabora con las compa&ntilde;&iacute;as para lograr impactar positivamente en la sociedad.<br/>
+        Resolvemos las preguntas: &iquest;Qu&eacute; hacer? y &iquest;D&oacute;nde invertir el capital?<br/>
+        Encausamos el enorme potencial que tienen las empresas, con proyectos de impacto<br/>
+        concretos para que juntos, cambiemos la realidad que los rodea.<br/>
+        </h4>
+        <h4 class="md-title">
+            Proyectos internos.<br/>
+            Innovaci&oacute;n del ecosistema empresarial, permiti&eacute;ndoles la colaboraci&oacute;n con proyectos<br/>
+            de impacto, totalmente realizables puertas adentro: Ludotecas para Centros Conin,<br/>
+            murales para transformar un hogar de ni&ntilde;os en un espacio m&aacute;s alegre; ayudando a los<br/>
+            hombres que viven en la calle a superar el invierno realizando mochilas anti fr&iacute;o,<br/>
+            colaborando en la construccion, reciclado y abastecimiento de materiales en<br/>
+            comedores infantiles, etc.<br/>
+        </h4> 
+    </div>
+    <div  layout="row" layout-xs="column" layout-align="center center" layout-wrap>
+        <div ng-repeat="p in ctrl.internos track by $index" flex="25" flex-xs="85">
+            <md-card>
+                <div style="background-color: {{p.color}}">
+                    <img ng-src="{{p.img}}" class="md-card-image" alt="{{p.titulo}}" style="width: 100px; display:block; margin-left: auto;margin-right: auto;width: 50%;">
+                </div>
+                <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline" style="text-align: center;">{{p.titulo}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p style="height: 50px;">
+                {{p.texto}}
+              </p>
+              <p style="height: 50px;">
+                {{p.texto2}}
+              </p>
+
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center" style="background-color: #29ccb4; color:white;">
+                <md-button ng-href="mailto:proyectos@desdetulugar.org.ar?subject=Proyecto interno: {{p.titulo}} ">Pedir m&aacute;s info</md-button>
+            </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+    <bannerempresas></bannerempresas>
+    
+</md-content>
+    
+

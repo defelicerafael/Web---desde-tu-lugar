@@ -1,0 +1,54 @@
+
+   <div layout="row" layout-xs="column" layout-align="center center">
+        <a href="#/empresas/proyectos-externos/" style="text-decoration: none;">
+            <fototexto 
+                    foto="true"
+                    fotovar='img/empresas/proyecto-externo.png'
+                    bloque="true"
+                    titulo="true"
+                    titulovar="PROYECTOS EXTERNOS"
+                    texto="false"
+                    boton="false"
+                    style="color:white;"
+                    >
+            </fototexto>
+        </a>
+        <a href="#/empresas/proyectos-internos/" style="text-decoration: none;">
+            <fototexto 
+                    foto="true"
+                    fotovar='img/empresas/proyecto-interno.png'
+                    bloque="true"
+                    titulo="true"
+                    titulovar="PROYECTOS INTERNOS"
+                    texto="false"
+                    boton="false"
+                    style="color:white;"
+                    >
+            </fototexto>
+        </a>
+       
+    </div>
+    <div style="background-color: white; color:#51b8f6;" >
+        <p><span style="font-size: 12px;">ESTAS EMPRESAS</span><br>
+            <span style="font-size: 18px;">YA TRANSFORMARON REALIDADES CON NOSOTROS</span>
+        </p>
+        <div layout="row" layout-wrap layout-align="center center">
+            <div ng-repeat="i in ctrl.images track by $index">
+                <img src="{{i.img}}" alt="{{i.alt}}" title="{{i.alt}}" style="width:150px; height: 150px; padding: 15px;" hide-xs>
+                <img src="{{i.img}}" alt="{{i.alt}}" title="{{i.alt}}" style="width:75px; height: 75px; padding: 5px;"  hide show-xs>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div style="background-color: #f76293; color:white; width:100%;" layout="row" layout-xs="column" layout-align="space-around center">
+        <div>
+            <h3>empresas@desdetulugar.org.ar</h3>
+        </div>
+        <div>
+            <h3>+54 9 11 6751-3101</h3>
+        </div>
+    </div>
+    
+    
+

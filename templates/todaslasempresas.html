@@ -1,0 +1,11 @@
+
+   <div style="background-color: white; color:#51b8f6;" >
+        <p><span style="font-size: 12px;">ESTAS EMPRESAS</span><br>
+            <span style="font-size: 18px;">YA TRANSFORMARON REALIDADES CON NOSOTROS</span>
+        </p>
+        <div layout="row" layout-wrap layout-align="center center">
+            <div ng-repeat="i in ctrl.images track by $index">
+                <img src="{{i.img}}" alt="{{i.alt}}" title="{{i.alt}}" style="width:150px; height: 150px; padding: 15px;">
+            </div>
+        </div>
+    </div>

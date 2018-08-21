@@ -1,0 +1,60 @@
+    <div layout="row" layout-align="space-around center" style="padding: 5px; color: white; background-color: #F76293;border-radius:5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div><em>educacion@desdetulugar.org.ar</em></div>
+        <div><em>Tel. 11 53874593</em></div>
+    </div> 
+<br/>
+
+    <div layout="row" layout-xs="column" layout-align="center center">
+        <a href="#/educacion/proyectos/" style="text-decoration: none;">
+            <fototexto 
+                    foto="true"
+                    fotovar='img/empresas/proyecto-interno.png'
+                    bloque="true"
+                    titulo="true"
+                    titulovar="PROYECTOS"
+                    texto="false"
+                    boton="false"
+                    style="color:white;"
+                    >
+            </fototexto>
+        </a>
+        <a href="#/educacion/programa-integral-en-solidaridad/" style="text-decoration: none;">
+            <fototexto 
+                    foto="true"
+                    fotovar='img/empresas/voluntariado-profesional.png'
+                    bloque="true"
+                    titulo="true"
+                    titulovar="PROGRAMA INTEGRAL EN SOLIDARIDAD"
+                    texto="false"
+                    boton="false"
+                    style="color:white;"
+                    >
+            </fototexto>
+        </a>
+        <a href="#/educacion/charlas-talleres/" style="text-decoration: none;">
+            <fototexto 
+                    foto="true"
+                    fotovar='img/empresas/team-buildings.png'
+                    bloque="true"
+                    titulo="true"
+                    titulovar="CHARLAS Y TALLERES"
+                    texto="false"
+                    boton="false"
+                    style="color:white;"
+                    >
+            </fototexto>
+        </a>    
+    </div>
+    <div style="background-color: white; color:#51b8f6;" >
+        <p><span style="font-size: 12px;">ESTOS COLEGIOS</span><br>
+            <span style="font-size: 18px;">YA TRANSFORMARON REALIDADES CON NOSOTROS</span>
+        </p>
+        <div layout="row" layout-wrap layout-align="center center">
+            <div ng-repeat="i in ctrl.colegios track by $index">
+                <img src="{{i.img}}" alt="{{i.alt}}" title="{{i.alt}}" style="width:150px; height: 150px; padding: 15px;">
+            </div>
+        </div>
+    </div>
+    
+    
+    

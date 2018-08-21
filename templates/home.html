@@ -1,0 +1,35 @@
+<style>
+.containerHome {
+    position: relative;
+    width:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
+}
+
+.containerHome img {vertical-align: middle;}
+
+.containerHome .contentHome {
+    position: absolute;
+    bottom: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+</style>
+<md-content flex layout-padding style="background-color: white;" >
+    <newslider tipo="foto" fotos="{{ctrl.sliders}}"></newslider>
+    <iconos icono="{{ctrl.icono}}"></iconos>
+    <h2 class="md-display-1" style="color:#0A8DAD; text-align: center;"> &iexcl;Desde tu lugar avanza!</h2>
+    <timeline></timeline>
+    <div class="containerHome">
+            <img src="img/home/fotos/desde-tu-lugar-5a.jpg" alt="desde tu lugar" style="width:100%; height: auto; display:block; margin-left: auto; margin-right: auto;">
+            <div class="contentHome">
+              <h2 hide-xs>Relevamos instituciones, priorizamos necesidades y hacemos proyectos concretos, medibles y cuantificables.</h2>
+            </div>
+        </div>
+        
+</md-content>
+

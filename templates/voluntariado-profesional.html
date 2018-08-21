@@ -1,0 +1,62 @@
+<md-content flex layout-padding style="background-color: white;">
+    <div>
+        <img src="img/empresas/voluntariadoprofesional/desdetulugar-voluntariado-profesional-responsabilidad-social-empresarial.png" atl="desdetulugar empresas proyectos internos responsabilidad social empresarial" title="desdetulugar empresas proyectos internos responsabilidad social empresarial" style="width: 100%; height: auto;"/>
+    </div>
+    <div layout="column" layout-align="center center" style="color:white; background-color: #bc78cd; width: 100%; height: auto;">
+        <div style="text-align: center;">
+            <span style="font-size: 1.5em;">RESPONSABILIDAD SOCIAL</span><br/>
+            <span style="font-size: 2.5em;">VOLUNTARIADO PROFESIONAL</span>
+        </div>
+    </div>
+    <div layout="row" layout-xs="column" layout-align="center center">
+        <div style="background-color: white; width: 100%; padding:4%;" layout="row" layout-align="center center">
+            <img src="img/empresas/internos/desdetulugar-proyectos-internos-rse.png" atl="desdetulugar empresas proyectos internos responsabilidad social empresarial" title="desdetulugar empresas proyectos internos responsabilidad social empresarial" style="width: 100%; height: auto;"/>
+        </div>
+        <div style="background-color: white; width: 100%; padding:4%;" layout="row" layout-align="center center">
+            <iframe width="560" height="315" ng-src="https://www.youtube.com/embed/guz0L3Z6uR0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>    
+    
+    <div  layout="row" layout-xs="column" layout-align="center center" layout-wrap>
+        <div ng-repeat="p in ctrl.internos track by $index" flex="25" flex-xs="100">
+            <md-card>
+                <div style="background-color: {{p.color}}">
+                    <img ng-src="{{p.img}}" class="md-card-image" alt="{{p.titulo}}" style="width: 100px; display:block; margin-left: auto;margin-right: auto;width: 50%;">
+                </div>
+                <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline" style="text-align: center;">{{p.titulo}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p style="height: 50px;">
+                {{p.texto}}
+              </p>
+              <p style="height: 50px;">
+                {{p.texto2}}
+              </p>
+
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center" style="background-color: #29ccb4; color:white;">
+                <md-button>Pedir m&aacute;s info</md-button>
+            </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+    <bannerempresas></bannerempresas>
+    
+    <todaslasempresas></todaslasempresas>
+    
+    
+    <div style="background-color: #f76293; color:white; width:100%;" layout="row" layout-align="space-around center">
+        <div>
+            <h3>empresas@desdetulugar.org.ar</h3>
+        </div>
+        <div>
+            <h3>Tel. 1544370599</h3>
+        </div>
+        
+    </div>
+</md-content>
+    
+

@@ -1,0 +1,93 @@
+
+<md-content flex layout-padding style="background-color: white;">
+    <div>
+        <img src="img/contacto/contacto.png" atl="desdetulugar contacto" title="desdetulugar contacto" style="width: 100%; height: auto;"/>
+    </div>
+    
+     
+    <div layout="row" layout-xs="column" layout-align="space-around center">
+        
+        <div style="padding:20px;">
+            <form name="projectForm" ng-submit="Ctrl.mail({'nombre':user.name,'apellido':user.apellido,'email':user.email,'texto':user.mensaje},'contacto');"">
+                <div style="color:#f76293;">Para dejarnos un<br/>
+                    <b>MENSAJE</b> 
+                </div>
+                    <div style="border: 1px solid #f76293;border-radius: 15px; margin-bottom: 5px;" layout="column">
+
+                        <div>
+                            <md-input-container >
+                            <label>Nombre</label>
+                            <input ng-model="user.name" name="name" required>
+                                <div ng-messages="projectForm.name.$error" role="alert">
+                                    <div ng-message="required">Ha olvidado poner su nombre.</div>
+                                    <div ng-message="md-maxlength">El nombre no puede ser tan largo.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div>
+                            <md-input-container >
+                                <label>Apellido</label>
+                                <input ng-model="user.apellido" name="apellido" required>
+                                <div ng-messages="projectForm.apellido.$error" role="alert">
+                                    <div ng-message="required">Ha olvidado poner su Apellido.</div>
+                                    <div ng-message="md-maxlength">El Apellido no puede ser tan largo.</div>
+                                </div>
+                            </md-input-container>
+                        </div>    
+                    </div>
+                    <div style="border: 1px solid #f76293;border-radius: 15px;margin-bottom: 5px;">
+                        <md-input-container>
+                            <label>Email</label>
+                                <input required type="email" name="clientEmail" ng-model="user.email"
+                                minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                                    <div ng-messages="projectForm.clientEmail.$error" role="alert">
+                                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                            No se parece a una direcci&oacute;n de correo electr&oacute;nico.
+                                        </div>
+                                    </div>  
+                        </md-input-container>
+                    </div>
+                    <div style="border: 1px solid #f76293; border-radius: 15px;margin-bottom: 5px;">
+                        <md-input-container class="md-block">
+                            <label>Mensaje</label>
+                            <textarea name="mensaje" ng-model="user.mensaje" md-maxlength="250" rows="5" md-select-on-focus required minlength="10"> </textarea>
+                                <div ng-messages="projectForm.mensaje.$error" role="alert">
+                                    <div ng-message-exp="['required', 'minlength']">
+                                        Escriba un mensaje por favor...
+                                    </div>
+                                </div> 
+                        </md-input-container>
+                    </div>
+                    <div>
+                        <md-button type="submit" style="background-color:#f76293;color:white; ">Enviar</md-button>
+                    </div>
+        </form>    
+        </div>
+        <div style="color:#b474c8;">
+            <div ng-show="mostrar">
+                <p>{{respuesta}}</p>
+            </div>
+            <div>Email. <br/>
+                <h2>info@desdetulugar.org.ar</h2>
+            </div>
+           <!-- <div>Tel. <br/>
+                <h2>1544370599</h2>
+            </div>-->
+        </div>
+        
+       
+       
+        
+    </div>
+    
+    
+    
+    <div style="background-color: #3aabef; color:white; width:100%; text-align: center;" layout="row" layout-xs="column" layout-align="space-around center">
+        <div>
+            <md-button style="background-color:#3aabef;color:white; border: 1px solid white; width: 300px;" href="https://www.mercadopago.com/mla/debits/new?preapproval_plan_id=e1db170f1a374c53ab3e8367aa702613">DON&Aacute;</md-button>
+        </div>
+        <div>
+            <md-button  style="background-color:#3aabef;color:white; border: 1px solid white;width: 300px;" href="https://www.desdetulugar.org.ar/tulugar">SUM&Aacute;TE</md-button>
+        </div>
+    </div>
+</md-content>

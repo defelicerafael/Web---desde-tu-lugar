@@ -1,0 +1,84 @@
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #58b0ff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #white;
+}
+</style>
+
+    <div layout="row" layout-align="space-between center" style="background-color: white; width: 100%;">
+        <div hide show-sm show-xs>
+            <md-button class="md-icon-button md-primary" ng-click="toggleLeft()" aria-label="Settings">
+                <md-icon md-svg-icon="img/icon/ic_menu_black_24px.svg"></md-icon>
+            </md-button>  
+          
+        </div>
+        
+        <div style="padding:2%;">
+            <a href="#/" style="text-decoration:none;">
+                <img src="img/header/logo.png" alt="logo desde tu lugar" title="desde tu lugar webApp"/>
+            </a>
+        </div>
+        <div hide-sm hide-xs>
+            <ul>
+                <li><a href="#/nosotros">NOSOTROS</a></li>
+                <li><a href="#/impacto">IMPACTO</a></li>
+                <li><a href="#/ayudar">COMO AYUDAR</a></li>
+                <li><a href="#/empresas">EMPRESAS</a></li>
+                <li><a href="#/educacion">EDUCACI&Oacute;N</a></li>
+                <li><a href="#/organizaciones">ORGANIZACIONES</a></li>
+                <li><a href="#/contacto">CONTACTO</a></li>
+            </ul>
+        </div>
+        <div style="padding:2%;">
+            <md-button class="md-raised" style="background-color: #f76293; color:white;" href="http://www.desdetulugar.org.ar/tulugar">TU LUGAR</md-button>  
+        </div>
+    </div>
+
+
+<md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop md-whiteframe="4">
+
+    <md-toolbar style="background-color:#3db0f5;">
+        <div layout="row" layout-align="space-between center">
+            <div>
+                <span style="color:white; padding-left: 10px;">MENU</span>
+            </div>
+            <div>
+                <md-button class="md-icon-button md-primary" ng-click="toggleLeft()" aria-label="Settings">
+                    <md-icon md-svg-icon="img/icon/ic_close_white_24px.svg"></md-icon>
+                </md-button>
+            </div>    
+        </div>    
+    </md-toolbar>
+
+      <md-content layout-margin>
+        <ul>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/nosotros">NOSOTROS</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/impacto">IMPACTO</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/ayudar">COMO AYUDAR</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/empresas">EMPRESAS</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/educacion">EDUCACI&Oacute;N</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/organizaciones">ORGANIZACIONES</a></li>
+            <li style="float:initial;" ng-click="toggleLeft()"><a href="#/contacto">CONTACTO</a></li>
+        </ul>
+      </md-content>
+   </md-sidenav>
