@@ -1,1 +1,82 @@
-<timeline></timeline>
+<section>
+<!-- ACA SE CARGA LA GALERIA-->
+<div>
+    <div layout="column" layout-align="center center">
+        <div>
+            <h3 class="md-display-1"> CARGAR "TIMELINE"</h3>
+        </div>
+        <div>
+            <md-input-container>
+                <label>T&iacute;tulo del timeline</label>
+                <input ng-model="timeline.titulo">
+            </md-input-container>
+        </div>
+        <div>  
+            <md-input-container>
+                <label>Texto del timeline</label>
+                <input ng-model="timeline.texto" >
+            </md-input-container>
+        </div>
+        <div>  
+            <md-input-container>
+                <label>Galer&iacute;a: poner un nombre a la galeria donde se van a mostrar las fotos</label>
+                <input ng-model="timeline.galeria">
+            </md-input-container>
+        </div>  
+        <div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Class</label>
+                <md-select ng-model="timeline.class">
+                  <md-option value="container left">Izquierda</md-option>
+                  <md-option value="container right">Derecha</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div>  
+            <md-input-container>
+                <label>Fecha en este formato: aaaa-mm-dd</label>
+                <input ng-model="timeline.fecha">
+            </md-input-container>
+        </div>
+        <div>  
+            <md-input-container>
+                <label>Pegar direcci&oacute;n de foto principal</label>
+                <input ng-model="timeline.img">
+            </md-input-container>
+        </div>
+        <div>
+            <md-button ng-click="ctrl.insertSF({'titulo':timeline.titulo,'texto':timeline.texto,'galeria':timeline.galeria,'class':timeline.class,'img':timeline.img,'fecha':timeline.fecha},'timeline');">CARGAR GALERIA</md-button>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+<p>1) Primero cargar la foto</p>
+<p>2) Luego completar galeria y texto</p>
+<p>3) Hacer clic en EDITAR </p>
+
+<div layout="column">
+    <md-input-container>
+      <label>GALERIA</label>
+      <input ng-model="foto.galeria">
+    </md-input-container>
+
+    <md-input-container>
+      <label>TEXTO</label>
+      <input ng-model="foto.alt">
+    </md-input-container>
+</div>
+<div>
+    <md-button ng-click="ctrl.EditImg({'galeria':foto.galeria,'alt':foto.alt});">EDITAR</md-button>
+</div>
+<upload-icon dirimg="../../../img/timeline/fotos/" titulo="Timeline" direccion="../../../img/timeline/fotos/"></upload-icon>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

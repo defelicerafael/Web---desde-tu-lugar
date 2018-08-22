@@ -1,10 +1,12 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Authorization,Content-Type,Accept,Origin,User-Agent,DNT,Cache-Control,X-Mx-ReqToken,Keep-Alive,X-Requested-With,If-Modified-Since");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
 include_once 'class_sql.php';
 
 //print_r($_POST);
-$dir = $_POST["dir"];
-$target_dir = "$dir";
+$dir = filter_input(INPUT_POST, 'dir', FILTER_SANITIZE_SPECIAL_CHARS);
+$target_dir = $dir;
 
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);
@@ -51,7 +53,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
         $foto = array("name"=>md5(basename( $_FILES["file"]["name"])),"type"=>$imageFileType);
         $myJSON = json_encode($foto);
-        echo $myJSON;
+        //echo $myJSON;
     } else {
         echo "error -Sorry, there was an error uploading your file.";
     }
@@ -105,10 +107,10 @@ function redimensionar_jpeg($img_original, $img_nueva, $img_nueva_anchura, $img_
 	ImageJPEG($thumb,$img_nueva,$img_nueva_calidad);
 	ImageDestroy($img);
 }
+$nuevaDir = str_replace("../../../", "",$destino);
 
-/*
 $base = new Sql();
-$base->insert("foto_necesidades",basename( $_FILES["file"]["name"]),"img");
-*/
+$base->insert("fotos",$nuevaDir,"img");
 
-?>
+echo $nuevaDir;
+

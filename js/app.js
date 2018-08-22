@@ -1,15 +1,21 @@
 (function(){
     var app = angular.module('dtlApp',['ngMaterial','config','controladores','SqlServices','ngFileUpload','panelItemTemplate','panelItemListTemplate','upload_icon','ngSanitize','paginas','NewSlider','ngAnimate','Iconos','Footer','Bloque','Banner','Fototexto','ngMessages','Timeline']);
     
+    app.factory("pasapalabra", function() {
+        return {
+          data: []
+        };
+      }); 
     
-    
-    app.controller('Ctrl',['Upload','$timeout','$route','$routeParams','$scope','Sql','SqlInsertArray','SqlEdit','SqlDelete','$mdToast','$mdDialog','$mdSidenav',function(Upload,$timeout,$route,$routeParams,$scope,Sql,SqlInsertArray,SqlEdit,SqlDelete,$mdToast,$mdDialog,$mdSidenav){
+    app.controller('Ctrl',['Upload','$timeout','$route','$routeParams','$scope','Sql','SqlInsertArray','SqlEdit','SqlDelete','$mdToast','$mdDialog','$mdSidenav','pasapalabra',function(Upload,$timeout,$route,$routeParams,$scope,Sql,SqlInsertArray,SqlEdit,SqlDelete,$mdToast,$mdDialog,$mdSidenav,pasapalabra){
         var dtl = this;
         dtl.data_eventos = [];
         dtl.icono = [];
         $scope.id = $routeParams.id;
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
+        dtl.id_foto = pasapalabra.data.id_foto;
+       // console.log(dtl.id_foto,pasapalabra.data.id_foto);
 
         function buildToggler(componentId) {
           return function() {
@@ -18,7 +24,8 @@
         }
         
        
-            
+        
+        
             
             
             
@@ -31,7 +38,7 @@
             var orden = "ASC";
             var limit = "100";
             Sql.async(filtro,link,tabla,filtro_por,orden,limit).then(function(d) {
-            console.log(d);
+           // console.log(d);
                 switch(quesoy) {
                     case 'icono':
                         dtl.icono = d;
@@ -115,8 +122,8 @@
                         
                     ];              
             
-            dtl.Edit = function (datos,tabla,id,show){
-            console.log(datos,tabla,id,show);
+        dtl.Edit = function (datos,tabla,id,show){
+           // console.log(datos,tabla,id,show);
             var where = 'id';
             var datos = datos;
             var link = 'server/edit.php';
@@ -132,22 +139,53 @@
                 }
             });
         };
+        
+        dtl.EditImg = function (datos){
+            //console.log(pasapalabra.data.id_foto);
+            var where = 'img';
+            var datos = datos;
+            var link = 'server/edit.php';
+            var tabla = 'fotos';
+            var id = pasapalabra.data.id_foto;
+            var show = '0';
+            SqlEdit.async(link,datos,tabla,id,where).then(function(d){
+            console.log(d);
+            dtl.showSimpleToast("Ha editado con EXITO");
+            $scope.isLoading=true;
+                if(show==='1'){
+                    window.history.back(1);
+                }
+            });
+        };
             
         dtl.insert = function (datos,tabla){
-           // console.log("datos:" + datos + "tabla" + tabla);
+            console.log("datos:" + datos + "tabla" + tabla);
             var datos = datos;
             var link = 'server/insert_array_datos.php';
             var tabla = tabla;
             SqlInsertArray.async(link,datos,tabla).then(function(d){
-            //console.log(d);
-            dtl.showSimpleToast("Ha ingresado correctamente en la base de datos.");
+            console.log(d);
+           // dtl.showSimpleToast("Ha ingresado correctamente en la base de datos.");
             $scope.isLoading=true;
-            $route.reload();
+           // $route.reload();
             
             });
         };      
             
+       dtl.insertSF = function (datos,tabla){
+            console.log("datos:" + datos + "tabla" + tabla);
+            var datos = datos;
+            var link = 'server/insert_array_sin_fecha.php';
+            var tabla = tabla;
+            SqlInsertArray.async(link,datos,tabla).then(function(d){
+            console.log(d);
+           // dtl.showSimpleToast("Ha ingresado correctamente en la base de datos.");
+            $scope.isLoading=true;
+           // $route.reload();
             
+            });
+        };      
+                 
        
        
         

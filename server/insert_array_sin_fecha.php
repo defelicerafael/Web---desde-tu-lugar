@@ -7,7 +7,7 @@ include_once 'class_sql.php';
 $objDatos = json_decode(file_get_contents("php://input"));
 
 
-$filtro = $objDatos->filtro;
+$filtro = $objDatos->datos;
 $tabla = $objDatos->tabla;
 $array = json_decode(json_encode($filtro), True);
 

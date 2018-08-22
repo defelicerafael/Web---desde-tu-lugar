@@ -49,7 +49,7 @@ class Sql
     $this->servername = "localhost";
     $this->username = "root";
     $this->password = "manjarlo1";
-    $this->dbname = "terrazas_de_mayo";
+    $this->dbname = "desdetulugar_new";
         
      // Create connection
     $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbname);

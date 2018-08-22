@@ -626,7 +626,7 @@ class Sql
         $sql .=") VALUES ('null',";
         $sql .= $values;
         $sql .=")";
-       // echo $sql;
+        echo $sql;
         $result = $this->connection->query($sql);
        // echo $sql;
             if ($result === TRUE) {
