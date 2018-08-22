@@ -15,6 +15,7 @@
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
         dtl.id_foto = pasapalabra.data.id_foto;
+        $scope.timeline = {};
        // console.log(dtl.id_foto,pasapalabra.data.id_foto);
 
         function buildToggler(componentId) {
@@ -138,6 +139,11 @@
                     window.history.back(1);
                 }
             });
+        };
+        
+        dtl.copiarUrl = function(){
+            $scope.timeline.img = pasapalabra.data.id_foto;
+            console.log(pasapalabra.data.id_foto);
         };
         
         dtl.EditImg = function (datos){
